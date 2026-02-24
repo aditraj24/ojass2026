@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@keyframes shooting-star {
+  0% {
+    transform: translateY(0) translateX(0) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(500px) translateX(500px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes shooting-star-delayed {
+  0% {
+    transform: translateY(0) translateX(0) rotate(-45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-300px) translateX(300px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+.animate-shooting-star {
+  animation: shooting-star 3s ease-in-out infinite;
+}
+
+.animate-shooting-star-delayed {
+  animation: shooting-star-delayed 4s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes fly-across {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(100vw + 100px));
+    opacity: 0;
+  }
+}
+
+.animate-fly-across {
+  animation: fly-across linear infinite;
+}
