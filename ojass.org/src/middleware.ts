@@ -10,7 +10,8 @@ const ALLOWED_ORIGINS = process.env.ALLOWED_ORIGINS?.split(',') || [
   'https://admin.ojass.org',
   'https://ojass.org',
   'https://ca.ojass.org',
-  'https://test.ojass.org'
+  'https://test.ojass.org',
+  'https://eventheads.ojass.org'
 ];
 
 /**
