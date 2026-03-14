@@ -94,35 +94,36 @@ export default function Dashboard() {
 
   // Fetch full student details when modal opens
   useEffect(() => {
-    if (selectedStudentDetails && !selectedStudentFullData && !loadingStudentDetails) {
-      setLoadingStudentDetails(true);
-      userAPI.getById(selectedStudentDetails)
-        .then((fullData) => {
-          setSelectedStudentFullData(fullData);
-          setLoadingStudentDetails(false);
-        })
-        .catch((error) => {
-          console.error('Error fetching student details:', error);
-          setLoadingStudentDetails(false);
-        });
-    }
-  }, [selectedStudentDetails, selectedStudentFullData, loadingStudentDetails]);
+    if (!selectedStudentDetails) return;
+    setLoadingStudentDetails(true);
+    setSelectedStudentFullData(null);
+    userAPI.getById(selectedStudentDetails)
+      .then((fullData) => {
+        setSelectedStudentFullData(fullData);
+      })
+      .catch((error) => {
+        console.error('Error fetching student details:', error);
+      })
+      .finally(() => {
+        setLoadingStudentDetails(false);
+      });
+  }, [selectedStudentDetails]);
 
   // Fetch student registrations when modal opens
   useEffect(() => {
-    if (selectedStudentDetails && !loadingStudentRegistrations) {
-      setLoadingStudentRegistrations(true);
-      userAPI.getRegistrations(selectedStudentDetails)
-        .then((registrations) => {
-          setStudentRegistrations(registrations);
-          setLoadingStudentRegistrations(false);
-        })
-        .catch((error) => {
-          console.error('Error fetching student registrations:', error);
-          setLoadingStudentRegistrations(false);
-        });
-    }
-  }, [selectedStudentDetails, loadingStudentRegistrations]);
+    if (!selectedStudentDetails) return;
+    setLoadingStudentRegistrations(true);
+    userAPI.getRegistrations(selectedStudentDetails)
+      .then((registrations) => {
+        setStudentRegistrations(registrations);
+      })
+      .catch((error) => {
+        console.error('Error fetching student registrations:', error);
+      })
+      .finally(() => {
+        setLoadingStudentRegistrations(false);
+      });
+  }, [selectedStudentDetails]);
 
   // Clear full data when modal closes
   useEffect(() => {
@@ -315,25 +316,23 @@ export default function Dashboard() {
 
   // Fetch ambassador referrals when modal opens
   useEffect(() => {
-    if (selectedAmbassadorReferrals) {
-      const ambassadors = students.filter(s => s.referralCount > 0);
-      const ambassador = ambassadors[(selectedAmbassadorReferrals || 1) - 1];
-
-      if (ambassador && !loadingAmbassadorReferrals) {
-        setLoadingAmbassadorReferrals(true);
-        userAPI.getReferrals(ambassador._id)
-          .then((data) => {
-            setAmbassadorReferralsData(data.referredUsers);
-            setLoadingAmbassadorReferrals(false);
-          })
-          .catch((error) => {
-            console.error('Error fetching ambassador referrals:', error);
-            setLoadingAmbassadorReferrals(false);
-            setAmbassadorReferralsData([]);
-          });
-      }
-    }
-  }, [selectedAmbassadorReferrals, students, loadingAmbassadorReferrals]);
+    if (!selectedAmbassadorReferrals) return;
+    const ambassadors = students.filter(s => s.referralCount > 0);
+    const ambassador = ambassadors[selectedAmbassadorReferrals - 1];
+    if (!ambassador) return;
+    setLoadingAmbassadorReferrals(true);
+    userAPI.getReferrals(ambassador._id)
+      .then((data) => {
+        setAmbassadorReferralsData(data.referredUsers);
+      })
+      .catch((error) => {
+        console.error('Error fetching ambassador referrals:', error);
+        setAmbassadorReferralsData([]);
+      })
+      .finally(() => {
+        setLoadingAmbassadorReferrals(false);
+      });
+  }, [selectedAmbassadorReferrals, students]);
 
   // Clear referrals data when modal closes
   useEffect(() => {
