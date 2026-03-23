@@ -9,6 +9,9 @@ function CertificateRenderer() {
     const eventName = params.get("eventName") || "EVENT NAME";
     const position = params.get("position"); // "winner" | "runner_up" | null
 
+    const toTitleCase = (str: string) =>
+        str.toLowerCase().replace(/\b\w/g, (char) => char.toUpperCase());
+
     const achievementText =
         position === "winner"
             ? <>for securing <u>1st Position</u> in <u>{eventName.toUpperCase()}</u> conducted under the banner of OJASS 2026.</>
@@ -84,7 +87,7 @@ function CertificateRenderer() {
                         fontFamily: "'Amoresa', serif",
                         color: "rgb(45, 45, 45)",
                     }}>
-                    {name}
+                    {toTitleCase(name)}
                 </div>
 
                 {/* OJASS ID — bottom: 51% */}
