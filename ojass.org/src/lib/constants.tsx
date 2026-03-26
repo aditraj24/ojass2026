@@ -1127,7 +1127,7 @@ export const WinnerData: WinnerData = [
         runner_up: {
             team_name: "Techy Stars",
             members: ["Harsh", "Yash Sharma", "Satyam Sagar", "Aryan Sinha"],
-            ojass_ids: ["OJASS26!AG8,OJASS26CP0N,OJASS26YYJM,OJASS265FCV"],
+            ojass_ids: ["OJASS261AG8", "OJASS26CP0N", "OJASS26YYJM", "OJASS265FCV"],
         },
     },
     {
@@ -1255,7 +1255,7 @@ export const WinnerData: WinnerData = [
         winner: {
             team_name: "DAWNLIGHT PRODUCTIONS",
             members: ["Shivam Mishra", "Swaraj Sinha", "Abhideep Abhisek"],
-            ojass_ids: ["OJASS26F8DW", "OJASS267EXS", "OJASS26EY23"],
+            ojass_ids: ["OJASS26F8DW", "OJASS267EXS", "OJASS26EYQ3"],
         },
     },
     {
