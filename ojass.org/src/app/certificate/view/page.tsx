@@ -4,7 +4,8 @@ import { Suspense } from "react";
 
 function CertificateRenderer() {
     const params = useSearchParams();
-    const name = params.get("name") || "Participant Name";
+    const rawName = params.get("name") || "Participant Name";
+    const name = rawName.trim().length > 30 ? rawName.trim().substring(0, 30) + "..." : rawName.trim();
     const ojassId = params.get("ojassId") || "OJASS26XXXX";
     const eventName = params.get("eventName") || "EVENT NAME";
 
@@ -75,6 +76,9 @@ function CertificateRenderer() {
                         fontSize: "2.8vw",
                         fontFamily: "'Amoresa', serif",
                         color: "rgb(45, 45, 45)",
+                        whiteSpace: "nowrap",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
                     }}>
                     {name}
                 </div>
