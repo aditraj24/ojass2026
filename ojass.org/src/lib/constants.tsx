@@ -730,7 +730,7 @@ export const WinnerData: WinnerData = [
             ojass_ids: ["OJASS26FYF9", "OJASS26BB5F"],
         },
         runner_up: {
-            team_name: "Mechanix",
+            team_name: "UNITY",
             members: [
                 "Tridibesh Jha",
                 "Subhadeep Barik",
