@@ -1054,14 +1054,14 @@ export const WinnerData: WinnerData = [
         id: 23,
         event_name: "MOCK IPL AUCTION",
         winner: {
-            team_name: "Individual",
-            members: ["Aditi"],
-            ojass_ids: ["OJASS26TSH7"],
+            team_name: "Sunrisers Hyderabad",
+            members: ["Ayush Raj", "Deeptanshu Singh Negi", "Zishan Ahemad", "Kumar Harsh Singh", "Ankit Raj"],
+            ojass_ids: ["OJASS26OICV", "OJASS26L5QF", "OJASS26AZ8C", "OJASS26B1AG", "OJASS26JMJX"],
         },
         runner_up: {
-            team_name: "Individual",
-            members: ["Tanishq Tanmay"],
-            ojass_ids: ["OJASS264IJX"],
+            team_name: "Gujarat Titans",
+            members: ["Sujal Kumar Yadav", "Ayush Rai", "Satish Kumar", "Shivanshu Patel"],
+            ojass_ids: ["OJASS269K45", "OJASS26DKZT", "OJASS26YK8H", "OJASS26B53T"],
         },
     },
     {
@@ -1121,8 +1121,8 @@ export const WinnerData: WinnerData = [
         event_name: "BUSINESS SIMULATION",
         winner: {
             team_name: "Nexovo",
-            members: ["Aditya Raj"],
-            ojass_ids: ["OJASS26178M"],
+            members: ["Aditya Raj", "Kriti", "Harshit Kumar", "Gautam Kumar"],
+            ojass_ids: ["OJASS26178M", "OJASS26J19E", "OJASS26FZ80", "OJASS268THH"],
         },
         runner_up: {
             team_name: "Techy Stars",
@@ -1263,8 +1263,8 @@ export const WinnerData: WinnerData = [
         event_name: "CINESCRIPT (BEST SCREENPLAY)",
         winner: {
             team_name: "XT PRODUCTION",
-            members: ["Shreyas", "Swastika", "Priyanshu"],
-            ojass_ids: ["OJASS26OC1V", "OJASS266TTD", "OJASS267EFV"],
+            members: ["Kislai Bramhbhatt", "Shreyas", "Swastika", "Priyanshu"],
+            ojass_ids: ["OJASS265W9I", "OJASS26OC1V", "OJASS266TTD", "OJASS267EFV"],
         },
     },
     {
